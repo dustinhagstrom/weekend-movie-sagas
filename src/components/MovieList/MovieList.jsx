@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import './MovieList.css';
 import MovieItem from '../MovieItem/MovieItem';
 
-function MovieList() {
+function MovieList({getMovieDetail}) {
 
   const dispatch = useDispatch();
   const movies = useSelector(store => store.movies);
@@ -18,7 +18,7 @@ function MovieList() {
       <section className="movies">
         {movies.map(movie => {
           return (
-            <MovieItem data-testid='movieItem' key={movie.id} movie={movie}/>
+            <MovieItem data-testid='movieItem' key={movie.id} movie={movie} getMovieDetail={getMovieDetail}/>
           );
         })}
       </section>

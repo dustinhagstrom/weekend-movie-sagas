@@ -40,6 +40,7 @@ function* fetchAllMovies() {
 // Create the rootSaga generator function
 function* rootSaga() {
   yield takeEvery('FETCH_MOVIES', fetchAllMovies);
+  // yield takeEvery('ADD_MOVIE_DETAIL', setMovieDetail);
 }
 
 
