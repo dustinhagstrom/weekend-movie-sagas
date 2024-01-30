@@ -7,6 +7,7 @@ router.get('/', (req, res) => {
     SELECT * FROM "movies"
       ORDER BY "title" ASC;
   `;
+  // console.log("hit the get route for all movies");
   pool.query(query)
     .then(result => {
       res.send(result.rows);

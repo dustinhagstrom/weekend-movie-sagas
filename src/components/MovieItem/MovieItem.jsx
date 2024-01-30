@@ -1,14 +1,18 @@
+import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 
 export default function MovieItem({ getMovieDetail, movie }) {
+    const dispatch = useDispatch();
     const history = useHistory();
 
     const handleDetailPage = (movie) => {
         // put this movie into the detail reducer
-        getMovieDetail(movie);
-
+        // dispatch({
+        //     type: "ADD_MOVIE_DETAIL",
+        // })
+        console.log(movie.id);
         // navigate to the Detail component
-        history.push("/detail");
+        history.push(`/detail/${movie.id}`);
     };
 
     return (

@@ -6,20 +6,16 @@ import { useState } from 'react';
 
 function App() {
 
-  const [movieDetail, setMovieDetail] = useState({});
 
-  const getMovieDetail = (movie) => {
-    setMovieDetail(movie);
-  }
   return (
     <div className="App">
       <h1>The Movies Saga!</h1>
       <Router>        
         <Route path="/" exact>
-          <MovieList getMovieDetail={getMovieDetail}/>
+          <MovieList/>
         </Route>
-        <Route path="/detail" exact>
-        <Detail movieDetail={movieDetail}/>
+        <Route path="/detail/:id">
+        <Detail />
         </Route>
         {/* Add Movie page */}
         

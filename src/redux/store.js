@@ -1,6 +1,6 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import createSagaMiddleware from 'redux-saga';
-import { takeEvery, put } from 'redux-saga/effects';
+import { takeLatest, put } from 'redux-saga/effects';
 import axios from 'axios';
 
 // Used to store movies returned from the server
@@ -39,8 +39,8 @@ function* fetchAllMovies() {
 
 // Create the rootSaga generator function
 function* rootSaga() {
-  yield takeEvery('FETCH_MOVIES', fetchAllMovies);
-  // yield takeEvery('ADD_MOVIE_DETAIL', setMovieDetail);
+  yield takeLatest('FETCH_MOVIES', fetchAllMovies);
+  // yield takeLatest('ADD_MOVIE_DETAIL', setMovieDetail);
 }
 
 
