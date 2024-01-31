@@ -10,6 +10,7 @@ function MovieList({getMovieDetail}) {
 
   useEffect(() => {
     dispatch({ type: 'FETCH_MOVIES' });
+    dispatch({ type: 'FETCH_GENRES' });
   }, []);
 
   return (
@@ -18,7 +19,7 @@ function MovieList({getMovieDetail}) {
       <section className="movies">
         {movies.map(movie => {
           return (
-            <MovieItem data-testid='movieItem' key={movie.id} movie={movie} getMovieDetail={getMovieDetail}/>
+            <MovieItem key={movie.id} movie={movie} getMovieDetail={getMovieDetail}/>
           );
         })}
       </section>

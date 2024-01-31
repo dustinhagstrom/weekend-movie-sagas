@@ -3,6 +3,8 @@ const router = express.Router();
 const pool = require('../modules/pool')
 
 router.get('/', (req, res) => {
+
+  // get all rows from 'movies'
   const query = `
     SELECT * FROM "movies"
       ORDER BY "title" ASC;
@@ -18,6 +20,7 @@ router.get('/', (req, res) => {
     })
 
 });
+
 
 router.post('/', (req, res) => {
   console.log(req.body);
